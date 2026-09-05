@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../css/gridtop2.css" title="default">
 <link rel="alternate stylesheet" href="../css/night.css" title="alternate">
 <script type="text/javascript" src="../js/styleswitcher.js"></script>
+<script type="text/javascript" src="../js/themetoggle.js"></script>
 </head>
 <body>
 <a id="top"></a><script src="../js/djtkana.js"></script>
@@ -79,8 +80,14 @@
 </div>
 <div style="clear:both"></div>
 <hr class="brush">
-<div class="modechange"><a href="#" onclick="setActiveStyleSheet('default'); return false;">night</a></div>
-<div class="modechange"><a href="#" onclick="setActiveStyleSheet('alternate'); return false;">day</a></div>
+<div class="theme-toggle-wrap">
+<input type="checkbox" id="theme-switch" class="theme-switch-input">
+<label for="theme-switch" class="theme-switch-label" title="Toggle night/day theme">
+<span class="theme-switch-icon">&#127769;</span>
+<span class="theme-switch-icon">&#9728;</span>
+<span class="theme-switch-ball"></span>
+</label>
+</div>
 <div class="modechange2"><a href="https://djtguide.neocities.org/kana/index.html">original</a></div>
 <div class="bodymargin">
 <p><a class="underscore" href="../index.html">ホーム</a> → <a class="underscore" href="learnmain.html">学習</a> → kana</p>
@@ -95,9 +102,23 @@
 	<ul id="tools">
 		<li id="tool_sound"><a>Play sound</a></li>
 		<li id="tool_stroke" style="visibility: visible;"><a>Stroke order</a></li>
+		<li id="tool_stats"><a>Stats</a></li>
 		<!-- <li id="tool_mnemonic"><a>Mnemonic</a></li> -->
 	</ul>
 	<div id="count"></div>
+</div>
+
+<div id="statsOverlay" class="stats-overlay">
+	<div class="stats-panel">
+		<div class="stats-panel-header">
+			<h3>Mistake stats</h3>
+			<a id="statsClose" class="stats-close">&times;</a>
+		</div>
+		<div id="statsBody"></div>
+		<div class="stats-panel-footer">
+			<a id="statsReset" class="stats-reset">Reset stats</a>
+		</div>
+	</div>
 </div>
 <hr class="dotted">
 <label class="showkana" for="toggle-1">show/hide options</label>
